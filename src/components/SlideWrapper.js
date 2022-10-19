@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import NewsList from "./NewsList";
 import SlideButton from "./SlideButton";
@@ -12,12 +12,32 @@ const WrapperBlock = styled.div`
   overflow: hidden;
 `;
 
+const PrevButton = () => {
+  const [index, setIndex] = useState(0);
+  const onClick = () => {
+    setIndex(() => index - 1);
+    if (index === -1) {
+    }
+  };
+  return <button></button>;
+};
+
+const NextButton = () => {
+  const [index, setIndex] = useState(0);
+  const onClick = () => {
+    setIndex(() => index + 1);
+    if (index === 1) {
+    }
+  };
+  return <button></button>;
+};
+
 const SlideWrapper = () => {
   return (
     <WrapperBlock>
-      <SlideButton />
+      <PrevButton />
       <NewsList />
-      <SlideButton />
+      <NextButton />
     </WrapperBlock>
   );
 };
